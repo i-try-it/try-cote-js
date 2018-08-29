@@ -18,6 +18,7 @@ responder.on('convert', (req, cb) => {
     } = req;
     cb(amount * rates[`${from}${capitalize(to)}`]);
 });
+
 subscriber.on('update rate', (update) => {
     rates[update.curensies] = update.rate;
 });
